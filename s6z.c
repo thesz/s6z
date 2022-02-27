@@ -18,3 +18,7 @@ void fail(char*msg, ...) {
 	fprintf(stderr, "\n");
 	exit(1);
 } /* fail */
+
+#define	ARR(ty) struct { ty* data; int n, cap; }
+#define	INIT(a) do { (a).data = NULL; (a).cap = (a).n = 0; } while(0)
+#define	PUSH(a,x) do { if (!((a).data) || (a).n >= (a).cap) { 
